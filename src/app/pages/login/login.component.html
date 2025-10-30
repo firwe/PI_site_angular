@@ -1,0 +1,54 @@
+<header class="header-cadastro">
+  <div class="header-content">
+    <div class="logo">
+      SUPLEMENTOS<br /><span>NATURAIS E ESPORTIVOS</span>
+    </div>
+  </div>
+</header>
+
+<main class="main-content">
+  <section class="login-container">
+    <div class="login-box">
+      <div class="login-header">
+        <h2>Que bom ter você aqui!</h2>
+        <p>Entre e aproveite o melhor dos Suplementos.</p>
+      </div>
+
+      <form class="login-form" #loginForm="ngForm" (ngSubmit)="onSubmit()">
+        
+        <div class="form-group">
+          <label for="email-login">Informe E-mail ou Telefone</label>
+          <input
+            type="text"
+            id="email-login"
+            placeholder="E-mail ou telefone"
+            
+            [(ngModel)]="loginData.email"
+            name="email"
+            required
+          />
+        </div>
+        
+        <div class="form-group password-group">
+          <label for="senha">Informe a sua senha</label>
+          <input 
+            type="password" 
+            id="senha" 
+            placeholder="Senha"
+            
+            [(ngModel)]="loginData.senha"
+            name="senha"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-entrar" [disabled]="!loginForm.valid">
+          Entrar
+        </button>
+
+        <a routerLink="/cadastro" class="btn btn-criar-conta">Criar conta</a>
+      
+      </form>
+    </div>
+  </section>
+</main>

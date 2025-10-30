@@ -1,0 +1,64 @@
+<div class="form-container">
+  
+  <h2>{{ isEditMode ? 'Editar Produto' : 'Criar Novo Produto' }}</h2>
+
+  <form (ngSubmit)="onSubmit()" #productForm="ngForm">
+
+    <div class="form-group">
+      <label for="id">ID do Produto</label>
+      <input type="text" id="id" name="id" [(ngModel)]="newProduct.id" required [readonly]="isEditMode">
+    </div>
+
+    <div class="form-group">
+      <label for="nome">Nome do Produto</label>
+      <input type="text" id="nome" name="nome" [(ngModel)]="newProduct.nome" required>
+    </div>
+
+    <div class="form-group">
+      <label for="preco">Preço (ex: "R$ 150,00")</label>
+      <input type="text" id="preco" name="preco" [(ngModel)]="newProduct.preco" required>
+    </div>
+
+    <div class="form-group">
+      <label for="precoAntigo">Preço Antigo (Opcional)</label>
+      <input type="text" id="precoAntigo" name="precoAntigo" [(ngModel)]="newProduct.precoAntigo">
+    </div>
+
+    <div class="form-group">
+      <label for="categoria">Categoria</label>
+      <select id="categoria" name="categoria" [(ngModel)]="newProduct.categoria">
+        <option value="whey-protein">Whey Protein</option>
+        <option value="creatina">Creatina</option>
+        <option value="pre-treino">Pré-Treino</option>
+        <option value="snacks">Snacks</option>
+        <option value="vitaminas">Vitaminas</option>
+        <option value="minerais-naturais">Minerais Naturais</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="descricao">Descrição Curta</label>
+      <input type="text" id="descricao" name="descricao" [(ngModel)]="newProduct.descricao">
+    </div>
+    
+    <div class="form-group">
+      <label for="section">Seção da Home</label>
+      <select id="section" name="section" [(ngModel)]="newProduct.section">
+        <option value="lancamentos">Lançamentos</option>
+        <option value="mais-vendidos">Mais Vendidos</option>
+        <option value="">Nenhum (Não mostrar na home)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="imagem">URL da Imagem</label>
+      <input type="text" id="imagem" name="imagem" [(ngModel)]="newProduct.imagem">
+      <small>Use uma URL do placeholder (https://via.placeholder.com/...) por enquanto.</small>
+    </div>
+
+    <button type="submit" class="btn-submit" [disabled]="!productForm.valid">
+      {{ isEditMode ? 'Salvar Alterações' : 'Criar Produto' }}
+    </button>
+
+  </form>
+</div>

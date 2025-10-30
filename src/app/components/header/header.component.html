@@ -1,0 +1,67 @@
+<header class="header">
+  <div class="top-header">
+    <div class="logo">
+      <a routerLink="/">SUPLEMENTOS<br /><span>NATURAIS E ESPORTIVOS</span></a>
+    </div>
+    <div class="search-wrapper">
+      <div class="search-bar">
+        <input
+          type="text"
+          placeholder="Encontre o suplemento ideal para você"
+        />
+        <button><span class="search-icon">🔍</span></button>
+      </div>
+    </div>
+
+    <div class="menu-opcoes">
+
+      @if (!authService.isLoggedIn()) {
+        <div class="user-auth">
+          <div class="user-icon">👤</div>
+          <div class="user-links">
+            <a routerLink="/cadastro" class="link-cadastro">Cadastre-se</a>
+            <a routerLink="/login" class="link-login">faça seu login</a>
+          </div>
+        </div>
+      } @else {
+        <div class="user-info">
+
+          <span class="welcome-message">
+            Olá, {{ authService.getCurrentUserName() }}!
+          </span>
+
+          @if (authService.isAdmin()) {
+            <a routerLink="/admin" class="admin-link">Painel Admin</a>
+          }
+
+          <a (click)="logout()" class="logout-button-header">Sair</a>
+
+        </div>
+      }
+
+      <a href="#">🛒</a> 
+    </div>
+    </div>
+  <nav class="menu-principal">
+    <div class="dropdown">
+      <a href="#" class="dropbtn">
+        <span class="icone-menu">☰</span> Categorias
+      </a>
+      <div class="dropdown-content">
+        <a routerLink="/">Home</a>
+        <a routerLink="/categoria/whey-protein">Whey Protein</a>
+        <a routerLink="/categoria/creatina">Creatina</a>
+        <a routerLink="/categoria/pre-treino">Pré-treino</a>
+        <a routerLink="/categoria/snacks">Snacks</a>
+        <a routerLink="/categoria/vitaminas">Vitaminas</a>
+        <a routerLink="/categoria/minerais-naturais">Minerais Naturais</a>
+      </div>
+    </div>
+    <ul class="nav-info">
+      <li><span>🚚 Frete grátis a partir de R$ 200</span></li>
+      <li><span>💸 10% OFF no PIX ou Boleto</span></li>
+      <li><span>💳 Compras em até 6x sem juros</span></li>
+      <li><span>⭐ Suplementos de alta qualidade</span></li>
+    </ul>
+  </nav>
+</header>

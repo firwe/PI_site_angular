@@ -1,0 +1,38 @@
+<main *ngIf="produto" class="product-page-content">
+  <div class="product-container">
+    
+    <div class="product-image-area">
+      <img [src]="produto.imagem" [alt]="produto.nome" class="product-main-image">
+    </div>
+
+    <div class="product-info-area">
+      
+      <h1 class="product-title">{{ produto.nome | uppercase }}</h1>
+      <p class="product-brand">SUPLEMENTOS NATURAIS E ESPORTIVOS</p>
+      
+      <div class="price-box">
+
+        <p *ngIf="produto.precoAntigo" class="old-price">{{ produto.precoAntigo }}</p>
+        
+        <p class="current-price">{{ produto.preco }}<span class="price-unit">(Cada)</span></p>
+        <p class="payment-info">NO BOLETO OU PIX</p>
+      </div>
+      
+      <div class="actions-box">
+        <button class="btn-comprar">COMPRAR</button>
+        <button class="btn-cart">🛒</button>
+      </div>
+      
+      <div class="product-description-short">
+        <h2>Descrição Rápida</h2>
+        <p>{{ produto.descricao }}</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div *ngIf="!produto">
+  <h2 style="text-align: center; padding: 50px;">
+    Produto não encontrado!
+  </h2>
+</div>

@@ -1,0 +1,161 @@
+<section class="banner-carousel">
+  <div class="carousel-container">
+      <input type="radio" name="slider" id="slide1" checked>
+      <input type="radio" name="slider" id="slide2">
+      <input type="radio" name="slider" id="slide3">
+
+      <div class="carousel-track">
+            <div class="carousel-slide">
+                <img src="assets/oferta 2.png" alt="Banner de Oferta 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="assets/combo.png" alt="Banner de Oferta 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="assets/banner-oferta3.jpg" alt="Banner de Oferta 3">
+            </div>
+      </div>
+
+      <label for="slide3" class="carousel-nav prev">‹</label>
+      <label for="slide2" class="carousel-nav next">›</label>
+
+      <div class="carousel-dots">
+            <label for="slide1" class="dot active"></label>
+            <label for="slide2" class="dot"></label>
+            <label for="slide3" class="dot"></label>
+      </div>
+  </div>
+</section>
+
+  <section class="explore-lancamentos">
+  <h2>Explore novos lançamentos</h2>
+  <div class="produtos-grid">
+
+    <a routerLink="/produto/whey-protein-baunilha" class="produto-card card-vertical-esq">
+      <img src="https://via.placeholder.com/300x400/D3D3D3/000000?text=Produto+1" alt="Whey Protein" />
+      <span class="icone-favorito">♡</span>
+      <div class="info-produto">
+        <p class="preco">R$ 127,90</p>
+        <p class="descricao">Whey Protein Baunilha: proteína rápida para ganho e recuperação</p>
+        <div class="icone-navegacao">▶</div>
+      </div>
+    </a>
+
+    <a routerLink="/produto/creatina-monohidratada" class="produto-card card-topo-dir">
+      <img src="https://via.placeholder.com/600x200/D3D3D3/000000?text=Creatina" alt="Creatina Monohidratada" />
+      <span class="icone-favorito">♡</span>
+      <div class="info-produto">
+        <p class="preco">R$ 99,90</p>
+        <p class="descricao">Creatina Monohidratada: mais força, energia e desempenho para seus treinos.</p>
+        <div class="icone-navegacao">▶</div>
+      </div>
+    </a>
+
+    <a routerLink="/produto/pretreino" class="produto-card card-pequeno-dir-1">
+      <img src="https://via.placeholder.com/200x200/D3D3D3/000000?text=Pre-treino" alt="Pré-Treino" />
+      <span class="icone-favorito">♡</span>
+      <div class="info-produto">
+        <p class="preco">R$ 67,50</p>
+        <p class="descricao">Pré-treino: mais foco, energia para potencializar seus treinos.</p>
+        <div class="icone-navegacao">▶</div>
+      </div>
+    </a>
+
+    <a routerLink="/produto/barraprotein1" class="produto-card card-pequeno-dir-2">
+      <img src="https://via.placeholder.com/200x200/D3D3D3/000000?text=Barra+de+Proteina" alt="Barra de Proteina" />
+      <span class="icone-favorito">♡</span>
+      <div class="info-produto">
+        <p class="preco">R$ 35,00</p>
+        <p class="descricao">Barra de Proteina: mais sabor, energia e desempenho no seu dia a dia.</p>
+        <div class="icone-navegacao">▶</div>
+      </div>
+    </a>
+
+    <a routerLink="/produto/vitaminac" class="produto-card card-vertical-dir">
+      <img src="https://via.placeholder.com/300x400/D3D3D3/000000?text=Vitamina" alt="Vitamina C" />
+      <span class="icone-favorito">♡</span>
+      <div class="info-produto">
+        <p class="preco">R$ 150,00</p>
+        <p class="descricao">Vitamina: mais saúde, energia e bem-estar no seu dia a dia.</p>
+        <div class="icone-navegacao">▶</div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section class="mais-vendidos">
+  <h2>Mais Vendidos</h2>
+  <div class="mais-vendidos-grid">
+
+    <a routerLink="/produto/suplemento1" class="produto-card destaque-vertical">
+      <img src="https://via.placeholder.com/300x400/D3D3D3/000000?text=Produto+1" alt="Suplemento 1" />
+      <span class="icone-favorito">♡</span>
+      <div class="info-produto">
+        <p class="preco">R$ 35,00</p>
+        <p class="descricao">Suplementos que impulsionam sua saúde, energia e desempenho diário</p>
+        <div class="icone-navegacao">▶</div>
+      </div>
+    </a>
+
+    <a routerLink="/produto/suplemento2" class="produto-card pequeno-superior">
+      <img src="https://via.placeholder.com/200x200/D3D3D3/000000?text=Produto+2" alt="Suplemento 2" />
+      <span class="icone-favorito">♡</span>
+      <div class="info-produto">
+        <p class="preco">R$ 135,00</p>
+        <p class="descricao">Suplementos que impulsionam sua saúde</p>
+        <div class="icone-navegacao">▶</div>
+      </div>
+    </a>
+
+    <a routerLink="/produto/multivitaminico" class="produto-card pequeno-inferior">
+      <img src="https://via.placeholder.com/200x200/D3D3D3/000000?text=Produto+4" alt="Multivitaminico" />
+      <span class="icone-favorito">♡</span>
+      <div class="info-produto">
+        <p class="preco">R$ 50,00</p>
+        <p class="descricao">Multivitamínico Sabor Laranja</p>
+        <div class="icone-navegacao">▶</div>
+      </div>
+    </a>
+
+    <a routerLink="/produto/creatinagummy" class="produto-card medio-central">
+      <img src="https://via.placeholder.com/400x400/D3D3D3/000000?text=Produto+3" alt="Creatina Gummy" />
+      <span class="icone-favorito">♡</span>
+      <div class="info-produto">
+        <p class="preco">R$ 149,90</p>
+        <p class="descricao">Creatina Gummy 60 Gomas</p>
+        <div class="icone-navegacao">▶</div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+  <section class="categorias-visuais">
+    
+    <a routerLink="/categoria/whey-protein" class="categoria-card card-whey">
+      <img src="assets/whey.jpg" alt="Whey Protein" />
+      <span>WHEY PROTEIN</span>
+    </a>
+
+    <a routerLink="/categoria/creatina" class="categoria-card card-creatina">
+      <img src="assets/creatina.jpg" alt="Creatina" />
+      <span>CREATINA</span>
+    </a>
+
+    <a routerLink="/categoria/pre-treino" class="categoria-card card-pre-treino">
+      <img src="assets/pre-treino.jpg" alt="Pré-Treino" />
+      <span>PRÉ-TREINO</span>
+    </a>
+
+    <a routerLink="/categoria/minerais-naturais" class="categoria-card card-minerais">
+      <img src="assets/minerais.jpg" alt="Minerais Naturais" />
+      <span>MINERAIS NATURAIS</span>
+    </a>
+
+    <a routerLink="/categoria/vitaminas" class="categoria-card card-vitaminas">
+      <img src="assets/vitaminas.jpg" alt="Vitaminas" />
+      <span>VITAMINAS</span>
+    </a>
+
+</section>

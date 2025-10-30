@@ -1,0 +1,43 @@
+<div *ngIf="nomeCategoria" class="category-content">
+  
+  <div class="category-header">
+    <h1>{{ nomeCategoria | uppercase }}</h1>
+    <p class="category-description">A Creatina ideal para aumento de força, performance e volume muscular. Escolha a sua!</p>
+  </div>
+
+  <div class="product-list-grid">
+    
+    @for (produto of produtosDaCategoria; track produto.id) {
+      <a [routerLink]="['/produto', produto.id]" class="product-box">
+        <span class="favorite-icon">♡</span>
+        
+        <div class="product-image-wrapper">
+          <img [src]="produto.imagem" [alt]="produto.nome" />
+        </div>
+        
+        <div class="product-details">
+          <h3 class="product-name">{{ produto.nome | uppercase }}</h3>
+          
+          <div class="product-rating">⭐⭐⭐⭐⭐</div> 
+          
+          <p class="product-benefit">{{ produto.descricao }}</p>
+          
+          @if (produto.precoAntigo) {
+            <p class="old-price-list">{{ produto.precoAntigo }}</p>
+          }
+          
+          <p class="price-list">{{ produto.preco }}</p>
+          
+          <button class="btn-comprar-list">COMPRAR</button>
+        </div>
+      </a>
+    }
+
+    @if (produtosDaCategoria.length === 0) {
+      <p style="padding: 20px; grid-column: 1 / -1;">
+        Nenhum produto encontrado para esta categoria.
+      </p>
+    }
+
+  </div>
+</div>

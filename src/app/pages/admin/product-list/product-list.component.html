@@ -1,0 +1,39 @@
+<div class="list-container">
+  <h2>Gerenciar Produtos</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nome do Produto</th>
+        <th>Categoria</th>
+        <th>Preço</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      @for (produto of products; track produto.id) {
+        <tr>
+          <td>{{ produto.nome }}</td>
+          <td>{{ produto.categoria }}</td>
+          <td>{{ produto.preco }}</td>
+          <td>
+            <a [routerLink]="['/admin/edit', produto.id]" class="btn-edit">
+              Editar
+            </a>
+
+            <button class="btn-delete" (click)="deleteProduct(produto.id)">
+              Excluir
+            </button>
+          </td>
+        </tr>
+      }
+
+    </tbody>
+  </table>
+
+  @if (products.length === 0) {
+    <p class="empty-list">Nenhum produto cadastrado.</p>
+  }
+
+</div>

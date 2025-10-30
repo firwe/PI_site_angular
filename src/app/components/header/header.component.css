@@ -1,0 +1,42 @@
+/* Estilos para quando o usuário está logado */
+.user-info {
+  display: flex;
+  align-items: center;
+  color: white; /* Ou a cor que preferir */
+}
+
+.welcome-message {
+  margin-right: 15px;
+  font-size: 0.9em;
+}
+
+.admin-link, .logout-button-header {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s;
+}
+
+.admin-link {
+   background-color: #f0ad4e;
+}
+.admin-link:hover {
+   background-color: #ec971f;
+}
+
+.logout-button-header {
+  background-color: #d9534f;
+}
+
+.logout-button-header:hover {
+  background-color: #c9302c;
+}
+
+.logo a {
+  color: inherit;
+  text-decoration: none;
+}

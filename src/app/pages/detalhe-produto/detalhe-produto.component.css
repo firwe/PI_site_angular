@@ -1,0 +1,148 @@
+.product-page-content {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-container {
+  display: flex;
+  gap: 40px;
+}
+
+.product-image-area {
+  flex: 1;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.product-main-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.product-info-area {
+  flex: 1.5;
+}
+
+.product-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.product-brand {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.price-box {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  margin-bottom: 30px;
+}
+
+.old-price {
+  font-size: 1rem;
+  color: #999;
+  text-decoration: line-through;
+  margin-bottom: 5px;
+}
+
+.current-price {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2d4b2d;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.price-unit {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+  vertical-align: top;
+  margin-left: 5px;
+}
+
+.payment-info {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d4b2d;
+}
+
+.actions-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.btn-comprar {
+  padding: 15px 40px;
+  background-color: #2d4b2d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  flex-grow: 1;
+}
+
+.btn-comprar:hover {
+  background-color: #3e633e;
+}
+
+.btn-cart {
+  padding: 15px 20px;
+  background-color: #3e633e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 60px;
+}
+
+.btn-cart:hover {
+  background-color: #2d4b2d;
+}
+
+.product-description-short h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+.product-description-short p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+@media (max-width: 900px) {
+  .product-container {
+    flex-direction: column;
+  }
+  .product-title {
+    font-size: 1.8rem;
+  }
+  .current-price {
+    font-size: 2.5rem;
+  }
+}
+
+.product-image-area {
+  flex: 1; 
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  text-align: center;
+
+  min-width: 300px;
+}

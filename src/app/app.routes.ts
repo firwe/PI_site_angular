@@ -1,3 +1,36 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { CadastroComponent } from './pages/cadastro/cadastro.component';
+import { CategoriaComponent } from './pages/categoria/categoria.component';
+import { DetalheProdutoComponent } from './pages/detalhe-produto/detalhe-produto.component';
+
+import { AdminLayoutComponent } from './pages/admin/admin-layout/admin-layout.component';
+import { ProductListComponent } from './pages/admin/product-list/product-list.component';
+import { ProductFormComponent } from './pages/admin/product-form/product-form.component';
+
+import { adminGuard } from './guards/admin.guard';
+
+
+export const routes: Routes = [
+    { path: '', component: HomeComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'cadastro', component: CadastroComponent },
+    { path: 'categoria/:nome', component: CategoriaComponent },
+    { path: 'produto/:id', component: DetalheProdutoComponent },
+
+    {
+      path: 'admin',
+      component: AdminLayoutComponent,
+      canActivate: [adminGuard],
+      children: [
+        { path: 'list', component: ProductListComponent },
+        { path: 'create', component: ProductFormComponent },
+        { path: 'edit/:id', component: ProductFormComponent },
+        { path: '', redirectTo: 'list', pathMatch: 'full' }
+      ]
+    },
+
+    { path: '**', redirectTo: '' }
+];

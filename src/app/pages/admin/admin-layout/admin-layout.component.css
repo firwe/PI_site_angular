@@ -1,0 +1,46 @@
+.admin-panel {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.admin-header {
+  background-color: #2d4b2d;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.admin-nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.admin-nav a:hover, .admin-nav a.logout-button:hover {
+  background-color: #555;
+}
+
+.logout-button {
+  cursor: pointer;
+  background-color: #d9534f;
+}
+
+.admin-content {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+}
