@@ -1,13 +1,15 @@
 <section class="banner-carousel">
   <div class="carousel-container">
-    
     <button class="carousel-btn prev" (click)="prevSlide()">&#10094;</button>
 
-    <div class="carousel-track" [style.transform]="'translateX(-' + (currentSlide * 100) + '%)'">
+    <div
+      class="carousel-track"
+      [style.transform]="'translateX(-' + currentSlide * 100 + '%)'"
+    >
       @for (banner of banners; track $index) {
-        <div class="carousel-slide">
-          <img [src]="banner" alt="Banner Oferta">
-        </div>
+      <div class="carousel-slide">
+        <img [src]="banner" alt="Banner Oferta" />
+      </div>
       }
     </div>
 
@@ -15,99 +17,119 @@
 
     <div class="carousel-dots">
       @for (banner of banners; track $index) {
-        <span class="dot" [class.active]="currentSlide === $index" (click)="currentSlide = $index"></span>
+      <span
+        class="dot"
+        [class.active]="currentSlide === $index"
+        (click)="currentSlide = $index"
+      ></span>
       }
     </div>
-    
   </div>
 </section>
 
 <section class="explore-lancamentos">
   <h2>Explore novos lançamentos</h2>
   <div class="produtos-grid">
-
     @for (produto of lancamentos; track produto.id; let i = $index) {
-      <a [routerLink]="['/produto', produto.id]" 
-         class="produto-card"
-         [ngClass]="{
-           'card-vertical-esq': i === 0,
-           'card-topo-dir': i === 1,
-           'card-pequeno-dir-1': i === 2,
-           'card-pequeno-dir-2': i === 3,
-           'card-vertical-dir': i === 4
-         }">
-         
-        <img [src]="produto.imagem" [alt]="produto.nome" />
-        
-        <span 
-  class="icone-favorito" 
-  [class.active]="isFavorito(produto.id)"
-  (click)="toggleFavorito($event, produto.id)">
-  {{ isFavorito(produto.id) ? '♥' : '♡' }}
-</span>
-        
-        <div class="info-produto">
-          <p class="preco">{{ produto.preco }}</p>
-          <p class="descricao">{{ produto.descricao }}</p>
-          
-          <div class="icone-navegacao" (click)="adicionarAoCarrinho($event, produto)">
-            +
-          </div>
+    <a
+      [routerLink]="['/produto', produto.id]"
+      class="produto-card"
+      [ngClass]="{
+        'card-vertical-esq': i === 0,
+        'card-topo-dir': i === 1,
+        'card-pequeno-dir-1': i === 2,
+        'card-pequeno-dir-2': i === 3,
+        'card-vertical-dir': i === 4
+      }"
+    >
+      <img [src]="produto.imagem" [alt]="produto.nome" />
+
+      <span
+        class="icone-favorito"
+        [class.active]="isFavorito(produto.id)"
+        (click)="toggleFavorito($event, produto.id)"
+      >
+        {{ isFavorito(produto.id) ? "♥" : "♡" }}
+      </span>
+
+      <div class="info-produto">
+        <p class="preco">{{ produto.preco }}</p>
+        <p class="descricao">{{ produto.descricao }}</p>
+
+        <div
+          class="icone-navegacao"
+          (click)="adicionarAoCarrinho($event, produto)"
+        >
+          +
         </div>
-      </a>
+      </div>
+    </a>
     }
-    
   </div>
 </section>
 
 <section class="mais-vendidos">
   <h2>Mais Vendidos</h2>
   <div class="mais-vendidos-grid">
-
     @for (produto of maisVendidos; track produto.id; let i = $index) {
-      <a [routerLink]="['/produto', produto.id]" 
-         class="produto-card"
-         [ngClass]="{
-            'destaque-vertical': i === 0,
-            'pequeno-superior': i === 1,
-            'pequeno-inferior': i === 2,
-            'medio-central': i === 3
-         }">
-        <img [src]="produto.imagem" [alt]="produto.nome" />
-        <span class="icone-favorito">♡</span>
-        <div class="info-produto">
-          <p class="preco">{{ produto.preco }}</p>
-          <p class="descricao">{{ produto.descricao }}</p>
-          
-          <div class="icone-navegacao" (click)="adicionarAoCarrinho($event, produto)">
-            +
-          </div>
-        </div>
-      </a>
-    }
+    <a
+      [routerLink]="['/produto', produto.id]"
+      class="produto-card"
+      [ngClass]="{
+        'destaque-vertical': i === 0,
+        'pequeno-superior': i === 1,
+        'pequeno-inferior': i === 2,
+        'medio-central': i === 3
+      }"
+    >
+      <img [src]="produto.imagem" [alt]="produto.nome" />
+      <span class="icone-favorito">♡</span>
+      <div class="info-produto">
+        <p class="preco">{{ produto.preco }}</p>
+        <p class="descricao">{{ produto.descricao }}</p>
 
+        <div
+          class="icone-navegacao"
+          (click)="adicionarAoCarrinho($event, produto)"
+        >
+          +
+        </div>
+      </div>
+    </a>
+    }
   </div>
 </section>
 
 <section class="categorias-visuais">
-    <a routerLink="/categoria/whey-protein" class="categoria-card card-whey">
-      <img src="assets/whey.jpg" alt="Whey Protein" />
-      <span>WHEY PROTEIN</span>
-    </a>
-    <a routerLink="/categoria/creatina" class="categoria-card card-creatina">
-      <img src="assets/creatina.jpg" alt="Creatina" />
-      <span>CREATINA</span>
-    </a>
-    <a routerLink="/categoria/pre-treino" class="categoria-card card-pre-treino">
-      <img src="assets/pre-treino.jpg" alt="Pré-Treino" />
-      <span>PRÉ-TREINO</span>
-    </a>
-    <a routerLink="/categoria/minerais-naturais" class="categoria-card card-minerais">
-      <img src="assets/minerais.jpg" alt="Minerais Naturais" />
-      <span>MINERAIS NATURAIS</span>
-    </a>
-    <a routerLink="/categoria/vitaminas" class="categoria-card card-vitaminas">
-      <img src="assets/vitaminas.jpg" alt="Vitaminas" />
-      <span>VITAMINAS</span>
-    </a>
+    
+  <a routerLink="/categoria/whey-protein" class="categoria-card card-whey">
+    <img src="assets/whey.png" alt="Whey Protein" />
+    <div class="overlay"></div>
+    <span>WHEY PROTEIN</span>
+  </a>
+
+  <a routerLink="/categoria/creatina" class="categoria-card card-creatina">
+    <img src="assets/creatina.png" alt="Creatina" />
+    <div class="overlay"></div>
+    <span>CREATINA</span>
+  </a>
+
+  <a routerLink="/categoria/pre-treino" class="categoria-card card-pre-treino">
+    <img src="assets/pretreino.png" alt="Pré-Treino" />
+    <div class="overlay"></div>
+    <span>PRÉ-TREINO</span>
+  </a>
+
+  <a routerLink="/categoria/minerais-naturais" class="categoria-card card-minerais">
+    <img src="assets/image1.png" alt="Minerais Naturais" />
+    <div class="overlay"></div>
+    <span>MINERAIS NATURAIS</span>
+  </a>
+
+  <a routerLink="/categoria/vitaminas" class="categoria-card card-vitaminas">
+    <img src="assets/vitamina.jpg" alt="Vitaminas" />
+    <div class="overlay"></div>
+    <span>VITAMINAS</span>
+  </a>
+
 </section>

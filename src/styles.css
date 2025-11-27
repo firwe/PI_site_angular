@@ -438,27 +438,49 @@ main {
   border-radius: 12px;
   overflow: hidden;
   text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoria-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .categoria-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
-  margin: 0;
-  border-radius: 0;
+  transition: transform 0.5s ease;
+}
+
+.categoria-card:hover img {
+  transform: scale(1.1);
+}
+
+.categoria-card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  z-index: 1;
 }
 
 .categoria-card span {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-  z-index: 1;
-  text-align: left;
+  text-transform: uppercase;
+  z-index: 2;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+  letter-spacing: 1px;
 }
 
 .banner-carousel {

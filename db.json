@@ -15,7 +15,7 @@
       "preco": "R$ 99,90",
       "precoAntigo": "R$ 109,90",
       "descricao": "Creatina Monohidratada: mais força, energia e desempenho para seus treinos.",
-      "imagem": "assets/creatina.png",
+      "imagem": "assets/creatMonoH.png",
       "categoria": "creatina",
       "section": "lancamentos"
     },
@@ -51,7 +51,7 @@
       "nome": "Suplemento Diário",
       "preco": "R$ 35,00",
       "descricao": "Suplementos que impulsionam sua saúde, energia e desempenho diário",
-      "imagem": "https://via.placeholder.com/300x400/D3D3D3/000000?text=Produto+1",
+      "imagem": "assets/whey.png",
       "categoria": "minerais-naturais",
       "section": "mais-vendidos"
     },
@@ -60,7 +60,7 @@
       "nome": "Suplemento Saúde",
       "preco": "R$ 135,00",
       "descricao": "Suplementos que impulsionam sua saúde",
-      "imagem": "https://via.placeholder.com/200x200/D3D3D3/000000?text=Produto+2",
+      "imagem": "assets/wheyMaisVendidos.jpg",
       "categoria": "minerais-naturais",
       "section": "mais-vendidos"
     },
@@ -69,7 +69,7 @@
       "nome": "Multivitamínico Sabor Laranja",
       "preco": "R$ 50,00",
       "descricao": "Multivitamínico Sabor Laranja",
-      "imagem": "https://via.placeholder.com/200x200/D3D3D3/000000?text=Produto+4",
+      "imagem": "assets/vitaminaMaisVendidos.jpg",
       "categoria": "vitaminas",
       "section": "mais-vendidos"
     },
@@ -79,7 +79,7 @@
       "preco": "R$ 149,90",
       "precoAntigo": "R$ 160,00",
       "descricao": "Creatina Gummy 60 Gomas",
-      "imagem": "public/",
+      "imagem": "assets/vitamina2.png",
       "categoria": "creatina",
       "section": "mais-vendidos"
     }
