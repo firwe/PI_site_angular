@@ -38,8 +38,16 @@
 
         </div>
       }
+      <a routerLink="/favoritos" style="margin-right: 15px; text-decoration: none; font-size: 1.2rem;">
+  ❤️
+</a>
 
-      <a href="#">🛒</a> 
+<a routerLink="/carrinho" class="cart-icon-wrapper">
+  🛒
+  @if (cartCount > 0) {
+    <span class="cart-badge">{{ cartCount }}</span>
+  }
+</a>
     </div>
     </div>
   <nav class="menu-principal">

@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -10,12 +11,21 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+
+  cartCount: number = 0;
 
   constructor(
     public authService: AuthService,
-    private router: Router
+    private router: Router,
+    private cartService: CartService
   ) {}
+
+  ngOnInit() {
+    this.cartService.cartCount$.subscribe(count => {
+      this.cartCount = count;
+    });
+  }
 
   logout(): void {
     this.authService.logout();

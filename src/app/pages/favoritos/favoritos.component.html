@@ -1,0 +1,30 @@
+<div class="favorites-container">
+  <h2>Meus Favoritos ❤️</h2>
+
+  @if (produtosFavoritos.length > 0) {
+    <div class="produtos-grid">
+      @for (produto of produtosFavoritos; track produto.id) {
+        <a [routerLink]="['/produto', produto.id]" class="produto-card">
+          <img [src]="produto.imagem" [alt]="produto.nome" />
+          
+          <span class="icone-favorito active" (click)="$event.stopPropagation(); $event.preventDefault(); removerFavorito(produto)">
+            ♥
+          </span>
+          
+          <div class="info-produto">
+            <p class="preco">{{ produto.preco }}</p>
+            <p class="descricao">{{ produto.nome }}</p>
+            <div class="icone-navegacao" (click)="adicionarAoCarrinho($event, produto)">
+              +
+            </div>
+          </div>
+        </a>
+      }
+    </div>
+  } @else {
+    <div class="empty-state">
+      <p>Você ainda não tem produtos favoritos.</p>
+      <a routerLink="/" class="btn-back">Voltar para a Loja</a>
+    </div>
+  }
+</div>
