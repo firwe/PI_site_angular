@@ -8,48 +8,51 @@
         <input
           type="text"
           placeholder="Encontre o suplemento ideal para você"
+          [(ngModel)]="termoBusca"
+          (keyup.enter)="fazerBusca()"
         />
-        <button><span class="search-icon">🔍</span></button>
+        <button (click)="fazerBusca()">
+          <span class="search-icon">🔍</span>
+        </button>
       </div>
     </div>
 
     <div class="menu-opcoes">
-
       @if (!authService.isLoggedIn()) {
-        <div class="user-auth">
-          <div class="user-icon">👤</div>
-          <div class="user-links">
-            <a routerLink="/cadastro" class="link-cadastro">Cadastre-se</a>
-            <a routerLink="/login" class="link-login">faça seu login</a>
-          </div>
+      <div class="user-auth">
+        <div class="user-icon">👤</div>
+        <div class="user-links">
+          <a routerLink="/cadastro" class="link-cadastro">Cadastre-se</a>
+          <a routerLink="/login" class="link-login">faça seu login</a>
         </div>
+      </div>
       } @else {
-        <div class="user-info">
+      <div class="user-info">
+        <span class="welcome-message">
+          Olá, {{ authService.getCurrentUserName() }}!
+        </span>
 
-          <span class="welcome-message">
-            Olá, {{ authService.getCurrentUserName() }}!
-          </span>
+        @if (authService.isAdmin()) {
+        <a routerLink="/admin" class="admin-link">Painel Admin</a>
+        }
 
-          @if (authService.isAdmin()) {
-            <a routerLink="/admin" class="admin-link">Painel Admin</a>
-          }
-
-          <a (click)="logout()" class="logout-button-header">Sair</a>
-
-        </div>
+        <a (click)="logout()" class="logout-button-header">Sair</a>
+      </div>
       }
-      <a routerLink="/favoritos" style="margin-right: 15px; text-decoration: none; font-size: 1.2rem;">
-  ❤️
-</a>
+      <a
+        routerLink="/favoritos"
+        style="margin-right: 15px; text-decoration: none; font-size: 1.2rem"
+      >
+        ❤️
+      </a>
 
-<a routerLink="/carrinho" class="cart-icon-wrapper">
-  🛒
-  @if (cartCount > 0) {
-    <span class="cart-badge">{{ cartCount }}</span>
-  }
-</a>
+      <a routerLink="/carrinho" class="cart-icon-wrapper">
+        🛒 @if (cartCount > 0) {
+        <span class="cart-badge">{{ cartCount }}</span>
+        }
+      </a>
     </div>
-    </div>
+  </div>
   <nav class="menu-principal">
     <div class="dropdown">
       <a href="#" class="dropbtn">

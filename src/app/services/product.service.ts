@@ -43,4 +43,8 @@ export class ProductService {
   updateProduct(updatedProduct: Product): Observable<Product> {
     return this.http.put<Product>(`${this.apiUrl}/${updatedProduct.id}`, updatedProduct);
   }
+
+  searchProducts(termo: string): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.apiUrl}?nome_like=${termo}`);
+  }
 }

@@ -11,6 +11,7 @@ import { ProductFormComponent } from './pages/admin/product-form/product-form.co
 import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
 import { adminGuard } from './guards/admin.guard';
 import { FavoritosComponent } from './pages/favoritos/favoritos.component';
+import { BuscaComponent } from './pages/busca/busca.component';
 
 
 export const routes: Routes = [
@@ -21,18 +22,14 @@ export const routes: Routes = [
     { path: 'produto/:id', component: DetalheProdutoComponent },
     { path: 'carrinho', component: CarrinhoComponent },
     { path: 'favoritos', component: FavoritosComponent },
-
-    {
-      path: 'admin',
-      component: AdminLayoutComponent,
+    { path: 'busca', component: BuscaComponent },
+    { path: 'admin', component: AdminLayoutComponent,
       canActivate: [adminGuard],
       children: [
         { path: 'list', component: ProductListComponent },
         { path: 'create', component: ProductFormComponent },
         { path: 'edit/:id', component: ProductFormComponent },
         { path: '', redirectTo: 'list', pathMatch: 'full' },
-      ]
-    },
-
+      ] },
     { path: '**', redirectTo: '' }
 ];
